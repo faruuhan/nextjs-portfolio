@@ -1,4 +1,4 @@
-import "@/assets/stylesheets/globals.css";
+import "@/assets/stylesheets/globals.sass";
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 
@@ -23,7 +23,7 @@ export default function RootLayout({
           <div className='w-3/12'>
             <Sidebar />
           </div>
-          <div className='w-9/12 border'>{children}</div>
+          <div className='w-9/12'>{children}</div>
         </div>
       </body>
     </html>
