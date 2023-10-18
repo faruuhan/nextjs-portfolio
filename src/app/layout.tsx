@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={opensans.className + `flex `}>
-        <div className='mx-auto lg:w-[1024px] flex min-h-screen lg:gap-5'>
+        <div className='mx-auto lg:w-[1024px] flex min-h-screen lg:gap-5 my-10'>
           <div className='w-3/12'>
             <Sidebar />
           </div>
