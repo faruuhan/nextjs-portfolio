@@ -1,22 +1,13 @@
-import Link from "next/link";
+import Image from "next/image";
+import NavMenu from "@/components/NavMenu";
+import CardProfile from "@/components/CardProfile";
 
 export default function Sidebar(): JSX.Element {
   return (
     <>
-      <nav className='flex flex-col mt-4 gap-y-1'>
-        <Link href='/'>
-          <div className='py-3 hover:bg-zinc-200 rounded-lg px-4'>Home</div>
-        </Link>
-        <Link href='/'>
-          <div className='py-3 hover:bg-zinc-200 rounded-lg px-4'>About</div>
-        </Link>
-        <Link href='/'>
-          <div className='py-3 hover:bg-zinc-200 rounded-lg px-4'>Project</div>
-        </Link>
-        <Link href='/'>
-          <div className='py-3 hover:bg-zinc-200 rounded-lg px-4'>Contact</div>
-        </Link>
-      </nav>
+      <CardProfile />
+      <NavMenu />
+      <h4 className='text-zinc-500'>©2023 made with ❤️ by faruuhan</h4>
     </>
   );
 }

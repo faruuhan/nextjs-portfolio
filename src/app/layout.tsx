@@ -1,10 +1,10 @@
-import "../../assets/stylesheets/globals.css";
+import "@/assets/stylesheets/globals.css";
 import type { Metadata } from "next";
-import { Quicksand } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 
 import Sidebar from "@/components/Sidebar";
 
-const quicksand = Quicksand({ subsets: ["latin"] });
+const opensans = Open_Sans({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,9 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={quicksand.className + `flex `}>
+      <body className={opensans.className + `flex `}>
         <div className='mx-auto lg:w-[1024px] flex min-h-screen lg:gap-5'>
-          <div className='w-3/12 border'>
+          <div className='w-3/12'>
             <Sidebar />
           </div>
           <div className='w-9/12 border'>{children}</div>
