@@ -8,7 +8,9 @@ export default function Sidebar(): JSX.Element {
       <section className='sticky top-10'>
         <CardProfile />
         <NavMenu />
-        <h4 className='text-zinc-500'>©2023 made with ❤️ by faruuhan</h4>
+        <h4 className='text-zinc-500 text-center'>
+          ©2023 with ❤️ by <span className='font-semibold'>ファルハン</span>
+        </h4>
       </section>
     </>
   );
