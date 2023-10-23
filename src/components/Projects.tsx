@@ -1,3 +1,6 @@
+import Image from "next/image";
+import bringeee from "@/static/images/projects/bringeee.png";
+
 export default function Projects() {
   return (
     <>
@@ -27,12 +30,19 @@ export default function Projects() {
         </div>
         <div className='grid grid-cols-2 gap-2'>
           <div className='rounded-xl overflow-hidden border border-zinc-300'>
-            <div className='bg-gray-300 h-[200px] w-full'></div>
-            <div className='px-6 py-4 space-y-2'>
-              <h3 className='font-medium capitalize'>First Project</h3>
+            <div className='h-[200px]'>
+              <Image
+                src={bringeee}
+                className='object-cover'
+                loading='lazy'
+                alt='bringee'
+              />
+            </div>
+            <div className='px-6 py-5 h-40 space-y-2'>
+              <h3 className='font-medium capitalize'>Bringeee</h3>
               <p className='text-zinc-500'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
-                tenetur?
+                Bringeee is WebApp for service sending cargo you can order
+                anywhare in web.
               </p>
               <div className='flex gap-2'>
                 <svg
