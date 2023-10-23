@@ -28,7 +28,7 @@ export default function Career(props: Career) {
     if (countYear === 0) {
       return `${monthRemaining} Month`;
     }
-    return `${countYear} Year ${monthRemaining} Month`;
+    return `${countYear} Years ${monthRemaining} Months`;
   };
   return (
     <>
@@ -45,12 +45,12 @@ export default function Career(props: Career) {
           </div>
           <div className='flex gap-2'>
             <span className='text-zinc-500 text-sm'>
-              {dayjs(props.data.start).format("MMM YY")}
+              {dayjs(props.data.start).format("MMM YYYY")}
             </span>
             <span className='text-zinc-300 text-sm'>-</span>
             <span className='text-zinc-500 text-sm'>
               {props.data.end
-                ? dayjs(props.data.end).format("MMM YY")
+                ? dayjs(props.data.end).format("MMM YYYY")
                 : "Present"}
             </span>
           </div>
