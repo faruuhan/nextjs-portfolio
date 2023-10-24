@@ -30,26 +30,75 @@ interface Project {
 export default function CardProject(props: Project): JSX.Element {
   const { data } = props;
 
-  const filterStack = (stack: string) => {
+  const filterStack = (stack: string, index: number) => {
     switch (stack) {
       case "JavaScript":
-        return <SiJavascript title={stack} color={SiJavascriptHex} size={24} />;
+        return (
+          <SiJavascript
+            key={index}
+            title={stack}
+            color={SiJavascriptHex}
+            size={24}
+          />
+        );
       case "TypeScript":
-        return <SiTypescript title={stack} color={SiTypescriptHex} size={24} />;
+        return (
+          <SiTypescript
+            key={index}
+            title={stack}
+            color={SiTypescriptHex}
+            size={24}
+          />
+        );
       case "React":
-        return <SiReact title={stack} color={SiReactHex} size={24} />;
+        return (
+          <SiReact key={index} title={stack} color={SiReactHex} size={24} />
+        );
       case "Next":
-        return <SiNextdotjs title={stack} color={SiNextdotjsHex} size={24} />;
+        return (
+          <SiNextdotjs
+            key={index}
+            title={stack}
+            color={SiNextdotjsHex}
+            size={24}
+          />
+        );
       case "Vue":
-        return <SiVuedotjs title={stack} color={SiVuedotjsHex} size={24} />;
+        return (
+          <SiVuedotjs
+            key={index}
+            title={stack}
+            color={SiVuedotjsHex}
+            size={24}
+          />
+        );
       case "Nuxt":
-        return <SiNuxtdotjs title={stack} color={SiNuxtdotjsHex} size={24} />;
+        return (
+          <SiNuxtdotjs
+            key={index}
+            title={stack}
+            color={SiNuxtdotjsHex}
+            size={24}
+          />
+        );
       case "Tailwind":
         return (
-          <SiTailwindcss title={stack} color={SiTailwindcssHex} size={24} />
+          <SiTailwindcss
+            key={index}
+            title={stack}
+            color={SiTailwindcssHex}
+            size={24}
+          />
         );
       case "Bootstrap":
-        return <SiBootstrap title={stack} color={SiBootstrapHex} size={24} />;
+        return (
+          <SiBootstrap
+            key={index}
+            title={stack}
+            color={SiBootstrapHex}
+            size={24}
+          />
+        );
     }
   };
 
@@ -68,7 +117,7 @@ export default function CardProject(props: Project): JSX.Element {
           <h3 className='font-medium capitalize'>{data.title}</h3>
           <p className='text-zinc-500'>{data.desc}</p>
           <div className='flex gap-2'>
-            {data.techStack.map((stack) => filterStack(stack))}
+            {data.techStack.map((stack, index) => filterStack(stack, index))}
           </div>
         </div>
       </div>
