@@ -23,11 +23,13 @@ export default function CardProfile(): JSX.Element {
           src={marsha}
           className='w-full h-32 object-cover rounded-lg'
           alt='bg marsha'
+          loading='lazy'
         />
         <Image
           src={profile}
           className='border-2 border-white rounded-full h-20 w-20 absolute -bottom-8 left-4 drop-shadow-md'
           alt='profile'
+          loading='lazy'
         />
       </div>
       <div className='pt-9 px-4'>

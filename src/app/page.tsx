@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import CareerCard from "@/components/CareerCard";
 import SkillList from "@/components/SkillList";
-import Projects from "@/components/Projects";
+import { Career } from "@/utils/interface";
+import CardProject from "@/components/CardProject";
 
 export default function Home() {
   const [dataSkill, setDataSkill] = useState<string[]>([
@@ -25,7 +26,7 @@ export default function Home() {
     "NodeJS",
   ]);
 
-  const [dataCareer, setDataCareer] = useState<any[]>([
+  const [dataCareer, setDataCareer] = useState<Career[]>([
     {
       company: "BiznetGio.com",
       position: "Software Enginner",
@@ -35,11 +36,19 @@ export default function Home() {
     },
   ]);
 
+  const [dataProject, setDataProject] = useState<any[]>([
+    {
+      title: "Bringeee",
+      desc: "Bringeee is WebApp for service sending cargo you can order anywharein web.",
+      techStack: ["JavaScript", "React", "Tailwind"],
+    },
+  ]);
+
   return (
     <>
-      <section className=''>
+      <section className='space-y-6'>
         <h3 className='font-semibold text-2xl'>Hi, I'm Farhan</h3>
-        <p className='mt-4'>
+        <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
           repellendus quia sint incidunt deserunt repellat non dolores, illo
           consequatur fugit corrupti error dolorum possimus blanditiis nam
@@ -71,7 +80,14 @@ export default function Home() {
         </div>
         <div className='grid grid-cols-2 gap-2'>
           {dataCareer.map((career, index) => (
-            <CareerCard key={index} data={career} />
+            <CareerCard
+              key={index}
+              company={career.position}
+              position={career.position}
+              start={career.start}
+              end={career.end}
+              location={career.location}
+            />
           ))}
         </div>
       </section>
@@ -105,7 +121,36 @@ export default function Home() {
         </div>
       </section>
       <div className='border-t border-zinc-300 my-6'></div>
-      <Projects />
+      <section className='space-y-6'>
+        <div className='space-y-2'>
+          <div className='flex gap-2 items-center'>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              strokeWidth={1.5}
+              stroke='currentColor'
+              className='w-6 h-6'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d='M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z'
+              />
+            </svg>
+
+            <h3 className='capitalize font-semibold text-xl'>Projects</h3>
+          </div>
+          <p className='text-zinc-500'>
+            Some personal projects that I am working on.
+          </p>
+        </div>
+        <div className='grid grid-cols-2 gap-2'>
+          {dataProject.map((project, index) => (
+            <CardProject key={index} data={project} />
+          ))}
+        </div>
+      </section>
     </>
   );
 }
