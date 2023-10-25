@@ -5,7 +5,7 @@ export default function Sidebar(): JSX.Element {
   return (
     <>
       <div
-        className='w-full bg-white h-full absolute z-10 lg:static hidden lg:w-3/12 lg:block'
+        className='w-full bg-white h-full absolute z-10 lg:static ease-in-out duration-500 lg:duration-0 -translate-x-[120%] lg:translate-x-0 lg:w-3/12 lg:block'
         id='sidebar'
       >
         <section className='sticky top-0 lg:top-10'>

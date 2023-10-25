@@ -9,10 +9,13 @@ const storeSlice = createSlice({
   reducers: {
     handleSidebar: (state, action: PayloadAction<boolean>) => {
       state.showSidebar = action.payload;
+      const sidebar = document.getElementById("sidebar");
       if (state.showSidebar) {
-        document.getElementById("sidebar")?.classList.remove("hidden");
+        sidebar!.classList.add("translate-x-full");
+        sidebar!.classList.remove("-translate-x-[120%]");
       } else {
-        document.getElementById("sidebar")?.classList.add("hidden");
+        sidebar!.classList.add("-translate-x-[120%]");
+        sidebar!.classList.remove("translate-x-full");
       }
     },
   },
