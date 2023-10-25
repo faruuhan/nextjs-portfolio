@@ -105,12 +105,13 @@ export default function CardProject(props: Project): JSX.Element {
   return (
     <>
       <div className='rounded-xl overflow-hidden border border-zinc-300'>
-        <div className='h-[200px]'>
+        <div className=''>
           <Image
             src={bringeee}
             className='object-cover'
             loading='lazy'
             alt='bringee'
+            style={{ width: "auto", height: "auto" }}
           />
         </div>
         <div className='px-6 py-5 h-40 space-y-3'>

@@ -2,7 +2,10 @@ import "@/assets/stylesheets/globals.sass";
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 
+import ReduxProvider from "@/utils/redux/ReduxProvider";
+
 import Sidebar from "@/components/Sidebar";
+import Navbar from "@/components/Navbar";
 
 const opensans = Open_Sans({ subsets: ["latin"], display: "swap" });
 
@@ -18,13 +21,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={opensans.className + `flex `}>
-        <div className='mx-auto lg:w-[1024px] flex min-h-screen lg:gap-5 my-10'>
-          <div className='w-3/12'>
+      <body className={opensans.className}>
+        <ReduxProvider>
+          <Navbar />
+          <div className='mx-4 pt-4 lg:pt-0 lg:mx-auto relative lg:w-[1024px] flex flex-col min-h-screen lg:flex-row lg:gap-5 lg:my-10'>
             <Sidebar />
+            <div className='w-full lg:w-9/12'>{children}</div>
           </div>
-          <div className='w-9/12'>{children}</div>
-        </div>
+        </ReduxProvider>
       </body>
     </html>
   );

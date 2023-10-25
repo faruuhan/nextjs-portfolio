@@ -21,9 +21,9 @@ export default function CardProfile(): JSX.Element {
       <div className='relative'>
         <Image
           src={marsha}
-          className='w-full h-32 object-cover rounded-lg'
+          className='w-full h-40 md:h-52 lg:h-32 object-cover rounded-lg'
           alt='bg marsha'
-          loading='lazy'
+          priority
         />
         <Image
           src={profile}

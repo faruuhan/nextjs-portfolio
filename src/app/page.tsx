@@ -78,7 +78,7 @@ export default function Home() {
           </div>
           <p className='text-zinc-500'>Professional career journey.</p>
         </div>
-        <div className='grid grid-cols-2 gap-2'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
           {dataCareer.map((career, index) => (
             <CareerCard
               key={index}
@@ -145,7 +145,7 @@ export default function Home() {
             Some personal projects that I am working on.
           </p>
         </div>
-        <div className='grid grid-cols-2 gap-2'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
           {dataProject.map((project, index) => (
             <CardProject key={index} data={project} />
           ))}
