@@ -17,10 +17,10 @@ import {
   SiBootstrap,
   SiBootstrapHex,
 } from "@icons-pack/react-simple-icons";
-import bringeee from "@/static/images/projects/bringeee.png";
 
 interface Project {
   data: {
+    image: string;
     title: string;
     desc: string;
     techStack: string[];
@@ -28,7 +28,7 @@ interface Project {
 }
 
 export default function CardProject(props: Project): JSX.Element {
-  const { data } = props;
+  const { image, title, desc, techStack } = props.data;
 
   const filterStack = (stack: string, index: number) => {
     switch (stack) {
@@ -105,20 +105,23 @@ export default function CardProject(props: Project): JSX.Element {
   return (
     <>
       <div className='rounded-xl overflow-hidden border border-zinc-300'>
-        <div className=''>
+        <div className='h-[200px] relative'>
           <Image
-            src={bringeee}
-            className='object-cover'
+            src={
+              `https://res.cloudinary.com/dngppnrwo/image/upload/v1698297774/web/projects` +
+              image
+            }
+            fill
             loading='lazy'
             alt='bringee'
-            style={{ width: "auto", height: "auto" }}
+            style={{ objectFit: "cover" }}
           />
         </div>
         <div className='px-6 py-5 h-40 space-y-3'>
-          <h3 className='font-medium capitalize'>{data.title}</h3>
-          <p className='text-zinc-500'>{data.desc}</p>
+          <h3 className='font-medium capitalize'>{title}</h3>
+          <p className='text-zinc-500'>{desc}</p>
           <div className='flex gap-2'>
-            {data.techStack.map((stack, index) => filterStack(stack, index))}
+            {techStack.map((stack, index) => filterStack(stack, index))}
           </div>
         </div>
       </div>

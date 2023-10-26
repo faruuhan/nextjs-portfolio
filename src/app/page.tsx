@@ -1,48 +1,15 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import CareerCard from "@/components/CareerCard";
 import SkillList from "@/components/SkillList";
-import { Career } from "@/utils/interface";
 import CardProject from "@/components/CardProject";
+import { useSelector } from "react-redux";
+import { RootState } from "@/utils/redux/store";
 
 export default function Home() {
-  const [dataSkill, setDataSkill] = useState<string[]>([
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Next",
-    "Vue",
-    "Nuxt",
-    "HTML",
-    "CSS",
-    "SASS",
-    "Tailwind",
-    "Bootstrap",
-    "PHP",
-    "CodeIgniter",
-    "Laravel",
-    "MySql",
-    "Express",
-    "NodeJS",
-  ]);
-
-  const [dataCareer, setDataCareer] = useState<Career[]>([
-    {
-      company: "BiznetGio.com",
-      position: "Software Enginner",
-      start: "7 November 2022",
-      end: "",
-      location: "Jakarta",
-    },
-  ]);
-
-  const [dataProject, setDataProject] = useState<any[]>([
-    {
-      title: "Bringeee",
-      desc: "Bringeee is WebApp for service sending cargo you can order anywharein web.",
-      techStack: ["JavaScript", "React", "Tailwind"],
-    },
-  ]);
+  const career = useSelector((state: RootState) => state.storeSlice.career);
+  const skills = useSelector((state: RootState) => state.storeSlice.skills);
+  const projects = useSelector((state: RootState) => state.storeSlice.projects);
 
   return (
     <>
@@ -79,15 +46,8 @@ export default function Home() {
           <p className='text-zinc-500'>Professional career journey.</p>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
-          {dataCareer.map((career, index) => (
-            <CareerCard
-              key={index}
-              company={career.position}
-              position={career.position}
-              start={career.start}
-              end={career.end}
-              location={career.location}
-            />
+          {career.map((career, index) => (
+            <CareerCard key={index} data={career} />
           ))}
         </div>
       </section>
@@ -115,7 +75,7 @@ export default function Home() {
           <p className='text-zinc-500'>My profesional skills.</p>
         </div>
         <div className='flex flex-wrap gap-2'>
-          {dataSkill.map((skill, index) => (
+          {skills.map((skill, index) => (
             <SkillList key={index} title={skill} />
           ))}
         </div>
@@ -146,7 +106,7 @@ export default function Home() {
           </p>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
-          {dataProject.map((project, index) => (
+          {projects.map((project, index) => (
             <CardProject key={index} data={project} />
           ))}
         </div>

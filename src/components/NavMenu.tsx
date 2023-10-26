@@ -24,7 +24,7 @@ export default function NavMenu(): JSX.Element {
             Home
           </div>
         </Link>
-        <Link href='/'>
+        <Link href='/about'>
           <div className='transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4'>
             <svg
               xmlns='http://www.w3.org/2000/svg'

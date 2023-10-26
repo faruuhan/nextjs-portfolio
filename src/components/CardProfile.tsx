@@ -19,18 +19,25 @@ export default function CardProfile(): JSX.Element {
   return (
     <>
       <div className='relative'>
-        <Image
-          src={marsha}
-          className='w-full h-40 md:h-52 lg:h-32 object-cover rounded-lg'
-          alt='bg marsha'
-          priority
-        />
-        <Image
-          src={profile}
-          className='border-2 border-white rounded-full h-20 w-20 absolute -bottom-8 left-4 drop-shadow-md'
-          alt='profile'
-          loading='lazy'
-        />
+        <div className='w-full h-40 md:h-52 lg:h-32 relative overflow-hidden rounded-lg'>
+          <Image
+            src='https://res.cloudinary.com/dngppnrwo/image/upload/v1698297803/web/profile/marsha_cltbqq.jpg'
+            fill
+            alt='bg marsha'
+            priority
+            style={{
+              objectFit: "cover",
+            }}
+          />
+        </div>
+        <div className='border-2 border-white rounded-full w-20 h-20 absolute -bottom-8 left-4 drop-shadow-md overflow-hidden'>
+          <Image
+            src='https://res.cloudinary.com/dngppnrwo/image/upload/v1698297802/web/profile/profile_u9jqpt.jpg'
+            fill
+            alt='profile'
+            loading='lazy'
+          />
+        </div>
       </div>
       <div className='pt-9 px-4'>
         <h3 className='font-medium text-lg'>{dataProfile.fullName}</h3>

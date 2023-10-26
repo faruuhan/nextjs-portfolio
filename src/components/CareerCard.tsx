@@ -1,15 +1,20 @@
 import dayjs from "dayjs";
 import Image from "next/image";
 import bgn from "@/static/images/bgn.png";
-import { Career } from "@/utils/interface";
 
-export default function CareerCard({
-  position,
-  company,
-  start,
-  end,
-  location,
-}: Career): JSX.Element {
+interface Career {
+  data: {
+    image: string;
+    position: string;
+    company: string;
+    start: string;
+    end: string;
+    location: string;
+  };
+}
+
+export default function CareerCard(props: Career): JSX.Element {
+  const { image, position, company, start, end, location } = props.data;
   const getDurationCareer = (start: string, end: string) => {
     let monthRemaining: number = end
       ? dayjs(end).diff(start, "month")
@@ -31,7 +36,10 @@ export default function CareerCard({
       <div className='rounded-lg border border-zinc-300 py-4 px-6 flex items-center gap-5'>
         <div>
           <Image
-            src={bgn}
+            src={
+              `https://res.cloudinary.com/dngppnrwo/image/upload/v1698297816/web/company` +
+              image
+            }
             width={40}
             height={40}
             alt='bgn'

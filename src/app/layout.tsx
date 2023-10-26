@@ -4,7 +4,7 @@ import { Open_Sans } from "next/font/google";
 
 import ReduxProvider from "@/utils/redux/ReduxProvider";
 
-import Sidebar from "@/components/Sidebar";
+import GridLayout from "@/components/GridLayout";
 import Navbar from "@/components/Navbar";
 
 const opensans = Open_Sans({ subsets: ["latin"], display: "swap" });
@@ -24,10 +24,7 @@ export default function RootLayout({
       <body className={opensans.className}>
         <ReduxProvider>
           <Navbar />
-          <div className='mx-4 pt-4 lg:pt-0 lg:mx-auto relative lg:w-[1024px] flex flex-col min-h-screen lg:flex-row lg:gap-5 lg:my-10'>
-            <Sidebar />
-            <div className='w-full lg:w-9/12'>{children}</div>
-          </div>
+          <GridLayout>{children}</GridLayout>
         </ReduxProvider>
       </body>
     </html>
