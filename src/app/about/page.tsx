@@ -60,7 +60,7 @@ export default function About() {
           </div>
           <p className='text-zinc-500'>My educational journey.</p>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
+        <div className='grid grid-cols-1 gap-2'>
           {education.map((education, index) => (
             <CardEducation key={index} data={education} />
           ))}

@@ -1,11 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { Career, Projects, Education } from "@/utils/interface";
+import { Career, Projects, Education, Profile } from "@/utils/interface";
 
 const storeSlice = createSlice({
   name: "storeslice",
   initialState: {
     showSidebar: false as boolean,
+    profile: {
+      sampulImage: "/marsha_cltbqq.jpg",
+      profileImage: "/profile_u9jqpt.jpg",
+      fullName: "Farhan Ramadhan",
+      username: "faruuhan",
+      bio: "Software Engineer",
+    } as Profile,
     skills: [
       "JavaScript",
       "TypeScript",
@@ -39,18 +46,18 @@ const storeSlice = createSlice({
       {
         image: "/alterra_e88p1o.png",
         school: "Alterra Academy",
-        title: "Frontend Engineer",
+        title: "Student",
         start: "2022",
         end: "2022",
-        location: "Remote",
+        major: "Immersive Frontend Engineer",
       },
       {
         image: "/lp3i_mfauf1.png",
         school: "Polytechnic LP3I Jakarta",
-        title: "Diploma",
+        title: "Associate Degree",
         start: "2017",
         end: "2020",
-        location: "Bekasi",
+        major: "Informatics Management (A.Md. Kom)",
       },
     ] as Array<Education>,
     projects: [

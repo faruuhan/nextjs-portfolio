@@ -20,7 +20,15 @@ export interface Education {
   title: string;
   start: string;
   end: string;
-  location: string;
+  major: string;
+}
+
+export interface Profile {
+  sampulImage: string;
+  profileImage: string;
+  fullName: string;
+  username: string;
+  bio: string;
 }
 
 export interface Skill {
