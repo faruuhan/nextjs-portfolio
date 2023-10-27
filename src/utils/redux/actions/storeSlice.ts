@@ -62,6 +62,24 @@ const storeSlice = createSlice({
     ] as Array<Education>,
     projects: [
       {
+        image: "/faruuhan-personal-web_tikosh.png",
+        title: "faruuhan",
+        desc: "Portfolio website build with TypeScript, Next and Tailwind.",
+        techStack: ["TypeScript", "Next", "Tailwind"],
+      },
+      {
+        image: "/v2-personal-website_nu23it.png",
+        title: "v2-personal-website",
+        desc: "Landing page personal portfolio project inspired by IOS widget.",
+        techStack: ["JavaScript", "Nuxt", "Tailwind"],
+      },
+      {
+        image: "/scraping-jkt48-website_b3oyld.png",
+        title: "scraping-jkt48-website",
+        desc: "REST API from scraping jkt48.com.",
+        techStack: ["TypeScript", "Express"],
+      },
+      {
         image: "/bringeee_niax2a.png",
         title: "Bringeee",
         desc: "Bringeee is WebApp for service sending cargo you can order anywhare in web.",

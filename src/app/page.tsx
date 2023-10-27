@@ -126,11 +126,13 @@ export default function Home() {
             }}
             className='mySwiper'
           >
-            {projects.map((project, index) => (
-              <SwiperSlide key={index}>
-                <CardProject data={project} />
-              </SwiperSlide>
-            ))}
+            {projects
+              .map((project, index) => (
+                <SwiperSlide key={index}>
+                  <CardProject data={project} />
+                </SwiperSlide>
+              ))
+              .slice(0, 4)}
           </Swiper>
         )}
       </section>

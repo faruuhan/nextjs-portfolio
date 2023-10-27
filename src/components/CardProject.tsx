@@ -16,6 +16,8 @@ import {
   SiNuxtdotjsHex,
   SiBootstrap,
   SiBootstrapHex,
+  SiExpress,
+  SiExpressHex,
 } from "@icons-pack/react-simple-icons";
 
 interface Project {
@@ -99,6 +101,10 @@ export default function CardProject(props: Project): JSX.Element {
             size={24}
           />
         );
+      case "Express":
+        return (
+          <SiExpress key={index} title={stack} color={SiExpressHex} size={24} />
+        );
     }
   };
 
@@ -119,7 +125,7 @@ export default function CardProject(props: Project): JSX.Element {
           />
         </div>
         <div className='px-6 py-5 h-40 flex flex-col'>
-          <h3 className='font-medium capitalize'>{title}</h3>
+          <h3 className='font-medium'>{title}</h3>
           <div className='grow mt-3'>
             <p className='text-zinc-500'>{desc}</p>
           </div>
