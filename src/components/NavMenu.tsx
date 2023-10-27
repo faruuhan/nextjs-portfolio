@@ -1,12 +1,23 @@
+"use client";
 import Link from "next/link";
+import { useSelector, useDispatch } from "react-redux";
+import { handleSidebar } from "@/utils/redux/actions/storeSlice";
+import { RootState, AppDispatch } from "@/utils/redux/store";
 
 export default function NavMenu(): JSX.Element {
+  const dispatch = useDispatch<AppDispatch>();
+  const showSidebar = useSelector(
+    (state: RootState) => state.storeSlice.showSidebar
+  );
   return (
     <>
       <nav className='flex flex-col gap-y-1'>
         <div className='border-t border-zinc-300 my-4'></div>
         <Link href='/'>
-          <div className='transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4'>
+          <div
+            className='transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4'
+            onClick={() => dispatch(handleSidebar(showSidebar ? false : true))}
+          >
             <svg
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
@@ -25,7 +36,10 @@ export default function NavMenu(): JSX.Element {
           </div>
         </Link>
         <Link href='/about'>
-          <div className='transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4'>
+          <div
+            className='transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4'
+            onClick={() => dispatch(handleSidebar(showSidebar ? false : true))}
+          >
             <svg
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
@@ -43,8 +57,11 @@ export default function NavMenu(): JSX.Element {
             About
           </div>
         </Link>
-        <Link href='/'>
-          <div className='transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4'>
+        <Link href='/projects'>
+          <div
+            className='transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4'
+            onClick={() => dispatch(handleSidebar(showSidebar ? false : true))}
+          >
             <svg
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
@@ -59,10 +76,13 @@ export default function NavMenu(): JSX.Element {
                 d='M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z'
               />
             </svg>
-            Project
+            Projects
           </div>
         </Link>
-        <Link href='/'>
+        <Link
+          href='/contact'
+          onClick={() => dispatch(handleSidebar(showSidebar ? false : true))}
+        >
           <div className='transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
