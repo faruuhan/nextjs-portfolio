@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import CareerCard from "@/components/CareerCard";
+import CardCareer from "@/components/CardCareer";
 import SkillList from "@/components/SkillList";
 import CardProject from "@/components/CardProject";
 import { useSelector } from "react-redux";
@@ -57,7 +57,7 @@ export default function Home() {
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
           {career.map((career, index) => (
-            <CareerCard key={index} data={career} />
+            <CardCareer key={index} data={career} />
           ))}
         </div>
       </section>

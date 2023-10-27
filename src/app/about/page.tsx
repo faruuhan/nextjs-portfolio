@@ -10,9 +10,9 @@ export default function About() {
   return (
     <>
       <section className='space-y-6'>
-        <div className='space-y-4 pb-6 border-b border-zinc-300 border-dashed'>
+        <div className='space-y-2 pb-6 border-b border-zinc-300 border-dashed'>
           <h3 className='font-semibold text-2xl'>About</h3>
-          <p className='text-zinc-500'>A short story about me</p>
+          <p className='text-zinc-500'>A short story about me.</p>
         </div>
         <div className='space-y-4'>
           <p>
@@ -60,7 +60,7 @@ export default function About() {
           </div>
           <p className='text-zinc-500'>My educational journey.</p>
         </div>
-        <div className='grid grid-cols-1 gap-2'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
           {education.map((education, index) => (
             <CardEducation key={index} data={education} />
           ))}

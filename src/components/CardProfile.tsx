@@ -22,7 +22,6 @@ export default function CardProfile(): JSX.Element {
             src='https://res.cloudinary.com/dngppnrwo/image/upload/v1698297803/web/profile/marsha_cltbqq.jpg'
             fill
             alt='bg marsha'
-            priority
             sizes='100%'
             style={{
               objectFit: "cover",
