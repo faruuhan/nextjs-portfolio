@@ -13,7 +13,7 @@ export default function Contact(): JSX.Element {
       <section className='space-y-6'>
         <div className='space-y-2 pb-6 border-b border-zinc-300 border-dashed'>
           <h3 className='font-semibold text-2xl'>Contact</h3>
-          <p className='text-zinc-500'>Let's connect with me.</p>
+          <p className='text-zinc-500'>Let&apos;s connect with me.</p>
         </div>
 
         <div className='grid grid-cols-2 md:grid-cols-5 gap-4'>

@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <>
       <section className='space-y-6'>
-        <h3 className='font-semibold text-2xl'>Hi, I'm Farhan</h3>
+        <h3 className='font-semibold text-2xl'>Hi, I&apos;m Farhan</h3>
         <p>
           Information management graduates are passionate about programming. has
           experience as a Frontend Engineer for a year, especially in web
