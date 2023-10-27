@@ -1,7 +1,5 @@
 "use client";
 import Image from "next/image";
-import marsha from "@/static/images/marsha.jpg";
-import profile from "@/static/images/profile.jpeg";
 import { useState } from "react";
 
 interface DataProfile {
@@ -25,6 +23,7 @@ export default function CardProfile(): JSX.Element {
             fill
             alt='bg marsha'
             priority
+            sizes='100%'
             style={{
               objectFit: "cover",
             }}
@@ -36,6 +35,7 @@ export default function CardProfile(): JSX.Element {
             fill
             alt='profile'
             loading='lazy'
+            sizes='100%'
           />
         </div>
       </div>

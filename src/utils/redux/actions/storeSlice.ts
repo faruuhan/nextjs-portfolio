@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { Career, Projects } from "@/utils/interface";
+import { Career, Projects, Education } from "@/utils/interface";
 
 const storeSlice = createSlice({
   name: "storeslice",
@@ -35,12 +35,42 @@ const storeSlice = createSlice({
         location: "Jakarta",
       },
     ] as Array<Career>,
+    education: [
+      {
+        image: "/alterra_e88p1o.png",
+        school: "Alterra Academy",
+        title: "Frontend Engineer",
+        start: "2022",
+        end: "2022",
+        location: "Remote",
+      },
+      {
+        image: "/lp3i_mfauf1.png",
+        school: "Polytechnic LP3I Jakarta",
+        title: "Diploma",
+        start: "2017",
+        end: "2020",
+        location: "Bekasi",
+      },
+    ] as Array<Education>,
     projects: [
       {
         image: "/bringeee_niax2a.png",
         title: "Bringeee",
-        desc: "Bringeee is WebApp for service sending cargo you can order anywharein web.",
+        desc: "Bringeee is WebApp for service sending cargo you can order anywhare in web.",
         techStack: ["JavaScript", "React", "Tailwind"],
+      },
+      {
+        image: "/muviku_rgbufb.png",
+        title: "Muviku",
+        desc: "Movie collection from tmdb API. Has a feature of selecting favorite films.",
+        techStack: ["JavaScript", "React", "Bootstrap"],
+      },
+      {
+        image: "/pokemonapp_iddigs.png",
+        title: "Pokemon App",
+        desc: "A simple project that displays a list of Pokemon collections.",
+        techStack: ["JavaScript", "Next", "Bootstrap"],
       },
     ] as Array<Projects>,
   },

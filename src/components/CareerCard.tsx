@@ -1,6 +1,5 @@
 import dayjs from "dayjs";
 import Image from "next/image";
-import bgn from "@/static/images/bgn.png";
 
 interface Career {
   data: {
@@ -42,7 +41,7 @@ export default function CareerCard(props: Career): JSX.Element {
             }
             width={40}
             height={40}
-            alt='bgn'
+            alt={image}
             loading='lazy'
             style={{ width: "auto", height: "auto" }}
           />

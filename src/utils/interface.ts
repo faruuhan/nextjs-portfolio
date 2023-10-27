@@ -14,6 +14,15 @@ export interface Projects {
   techStack: string[];
 }
 
+export interface Education {
+  image: string;
+  school: string;
+  title: string;
+  start: string;
+  end: string;
+  location: string;
+}
+
 export interface Skill {
   title: string;
 }

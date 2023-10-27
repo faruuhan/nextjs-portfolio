@@ -113,14 +113,17 @@ export default function CardProject(props: Project): JSX.Element {
             }
             fill
             loading='lazy'
-            alt='bringee'
+            alt={image}
             style={{ objectFit: "cover" }}
+            sizes='100%'
           />
         </div>
-        <div className='px-6 py-5 h-40 space-y-3'>
+        <div className='px-6 py-5 h-40 flex flex-col'>
           <h3 className='font-medium capitalize'>{title}</h3>
-          <p className='text-zinc-500'>{desc}</p>
-          <div className='flex gap-2'>
+          <div className='grow mt-3'>
+            <p className='text-zinc-500'>{desc}</p>
+          </div>
+          <div className='mt-auto flex gap-2'>
             {techStack.map((stack, index) => filterStack(stack, index))}
           </div>
         </div>

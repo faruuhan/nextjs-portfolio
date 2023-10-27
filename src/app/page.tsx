@@ -1,25 +1,35 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CareerCard from "@/components/CareerCard";
 import SkillList from "@/components/SkillList";
 import CardProject from "@/components/CardProject";
 import { useSelector } from "react-redux";
 import { RootState } from "@/utils/redux/store";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 export default function Home() {
   const career = useSelector((state: RootState) => state.storeSlice.career);
   const skills = useSelector((state: RootState) => state.storeSlice.skills);
   const projects = useSelector((state: RootState) => state.storeSlice.projects);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    setInterval(() => {
+      setIsLoading(false);
+    }, 300);
+  }, []);
 
   return (
     <>
       <section className='space-y-6'>
         <h3 className='font-semibold text-2xl'>Hi, I'm Farhan</h3>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
-          repellendus quia sint incidunt deserunt repellat non dolores, illo
-          consequatur fugit corrupti error dolorum possimus blanditiis nam
-          nobis! Repellendus, iure optio.
+          Information management graduates are passionate about programming. has
+          experience as a Frontend Engineer for a year, especially in web
+          development. Able to create web applications using modern JavaScript
+          technology such as Vue/React and have basic skills on the Backend side
+          with PHP/NodeJS technology.
         </p>
       </section>
       <div className='border-t border-zinc-300 my-6'></div>
@@ -105,11 +115,24 @@ export default function Home() {
             Some personal projects that I am working on.
           </p>
         </div>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
-          {projects.map((project, index) => (
-            <CardProject key={index} data={project} />
-          ))}
-        </div>
+        {!isLoading && (
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={10}
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+              },
+            }}
+            className='mySwiper'
+          >
+            {projects.map((project, index) => (
+              <SwiperSlide key={index}>
+                <CardProject data={project} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
       </section>
     </>
   );
