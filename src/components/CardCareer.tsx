@@ -1,5 +1,6 @@
 import dayjs from "dayjs";
 import Image from "next/image";
+import { useCountDurationCareer } from "@/utils/hook/useCountDurationCareer";
 
 interface Career {
   data: {
@@ -14,22 +15,8 @@ interface Career {
 
 export default function CareerCard(props: Career): JSX.Element {
   const { image, position, company, start, end, location } = props.data;
-  const getDurationCareer = (start: string, end: string) => {
-    let monthRemaining: number = end
-      ? dayjs(end).diff(start, "month")
-      : dayjs().diff(start, "month");
-    let countYear: number = 0;
+  const durationCareer = useCountDurationCareer(start, end);
 
-    while (monthRemaining - 12 >= 0) {
-      monthRemaining -= 12;
-      countYear++;
-    }
-
-    if (countYear === 0) {
-      return `${monthRemaining} Month`;
-    }
-    return `${countYear} Years ${monthRemaining} Months`;
-  };
   return (
     <>
       <div className='rounded-lg border bg-white border-zinc-300 py-4 px-6 flex items-center gap-5'>
@@ -62,9 +49,7 @@ export default function CareerCard(props: Career): JSX.Element {
               {end ? dayjs(end).format("MMM YYYY") : "Present"}
             </span>
           </div>
-          <span className='text-zinc-500 text-sm'>
-            ~ {getDurationCareer(start, end)}
-          </span>
+          <span className='text-zinc-500 text-sm'>~ {durationCareer}</span>
         </div>
       </div>
     </>
