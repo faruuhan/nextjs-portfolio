@@ -18,6 +18,7 @@ export default function Home() {
     setInterval(() => {
       setIsLoading(false);
     }, 1000);
+    window.scrollTo({ top: 0 });
   }, []);
 
   return (

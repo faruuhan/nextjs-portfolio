@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import CardEducation from "@/components/CardEducation";
 import { useSelector } from "react-redux";
 import { RootState } from "@/utils/redux/store";
@@ -7,6 +8,10 @@ export default function About() {
   const education = useSelector(
     (state: RootState) => state.storeSlice.education
   );
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
   return (
     <>
       <div className='animate-slide-up'>

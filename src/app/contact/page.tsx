@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import {
   SiGmail,
   SiInstagram,
@@ -8,6 +9,9 @@ import {
 } from "@icons-pack/react-simple-icons";
 
 export default function Contact(): JSX.Element {
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
   return (
     <>
       <div className='animate-slide-up'>

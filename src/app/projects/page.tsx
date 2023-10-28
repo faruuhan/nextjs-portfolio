@@ -1,10 +1,16 @@
 "use client";
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/utils/redux/store";
 import CardProject from "@/components/CardProject";
 
 export default function Project(): JSX.Element {
   const projects = useSelector((state: RootState) => state.storeSlice.projects);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
+
   return (
     <>
       <div className='animate-slide-up'>
