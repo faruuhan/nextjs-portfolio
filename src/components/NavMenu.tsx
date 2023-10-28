@@ -1,21 +1,23 @@
 "use client";
 import Link from "next/link";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { handleSidebar } from "@/utils/redux/actions/storeSlice";
-import { RootState, AppDispatch } from "@/utils/redux/store";
+import { AppDispatch } from "@/utils/redux/store";
+import { usePathname } from "next/navigation";
 
 export default function NavMenu(): JSX.Element {
   const dispatch = useDispatch<AppDispatch>();
-  const showSidebar = useSelector(
-    (state: RootState) => state.storeSlice.showSidebar
-  );
+  const pathname = usePathname();
+
   return (
     <>
       <nav className='flex flex-col gap-y-1'>
         <div className='border-t border-zinc-300 my-4'></div>
         <Link href='/'>
           <div
-            className='transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4 hover:scale-105'
+            className={`transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4 hover:scale-105 ${
+              pathname === "/" && "bg-zinc-100"
+            }`}
             onClick={() => dispatch(handleSidebar(false))}
           >
             <svg
@@ -37,7 +39,9 @@ export default function NavMenu(): JSX.Element {
         </Link>
         <Link href='/about'>
           <div
-            className='transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4 hover:scale-105'
+            className={`transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4 hover:scale-105 ${
+              pathname === "/about" && "bg-zinc-100"
+            }`}
             onClick={() => dispatch(handleSidebar(false))}
           >
             <svg
@@ -59,7 +63,9 @@ export default function NavMenu(): JSX.Element {
         </Link>
         <Link href='/projects'>
           <div
-            className='transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4 hover:scale-105'
+            className={`transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4 hover:scale-105 ${
+              pathname === "/projects" && "bg-zinc-100"
+            }`}
             onClick={() => dispatch(handleSidebar(false))}
           >
             <svg
@@ -80,7 +86,11 @@ export default function NavMenu(): JSX.Element {
           </div>
         </Link>
         <Link href='/contact' onClick={() => dispatch(handleSidebar(false))}>
-          <div className='transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4 hover:scale-105'>
+          <div
+            className={`transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4 hover:scale-105 ${
+              pathname === "/contact" && "bg-zinc-100"
+            }`}
+          >
             <svg
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
