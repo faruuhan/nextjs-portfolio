@@ -15,7 +15,7 @@ export default function CardEducation(props: Education): JSX.Element {
   const { image, school, title, start, end, major } = props.data;
   return (
     <>
-      <div className='rounded-lg border border-zinc-300 py-4 px-6 flex items-center gap-5'>
+      <div className='rounded-lg border bg-white border-zinc-300 py-4 px-6 flex items-center gap-5'>
         <div>
           <Image
             src={

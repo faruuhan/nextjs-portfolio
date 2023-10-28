@@ -28,6 +28,12 @@ export default function CardProfile(props: Profile): JSX.Element {
             style={{
               objectFit: "cover",
             }}
+            loading='lazy'
+            blurDataURL={
+              `https://res.cloudinary.com/dngppnrwo/image/upload/v1698297803/web/profile` +
+              sampulImage
+            }
+            placeholder='blur'
           />
         </div>
         <div className='border-2 border-white rounded-full w-20 h-20 absolute -bottom-8 left-4 drop-shadow-md overflow-hidden'>
@@ -38,8 +44,13 @@ export default function CardProfile(props: Profile): JSX.Element {
             }
             fill
             alt='profile'
-            loading='lazy'
             sizes='100%'
+            loading='lazy'
+            blurDataURL={
+              `https://res.cloudinary.com/dngppnrwo/image/upload/v1698297803/web/profile` +
+              profileImage
+            }
+            placeholder='blur'
           />
         </div>
       </div>

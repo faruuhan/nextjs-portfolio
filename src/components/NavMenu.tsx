@@ -15,7 +15,7 @@ export default function NavMenu(): JSX.Element {
         <div className='border-t border-zinc-300 my-4'></div>
         <Link href='/'>
           <div
-            className='transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4'
+            className='transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4 hover:scale-105'
             onClick={() => dispatch(handleSidebar(false))}
           >
             <svg
@@ -37,7 +37,7 @@ export default function NavMenu(): JSX.Element {
         </Link>
         <Link href='/about'>
           <div
-            className='transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4'
+            className='transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4 hover:scale-105'
             onClick={() => dispatch(handleSidebar(false))}
           >
             <svg
@@ -59,7 +59,7 @@ export default function NavMenu(): JSX.Element {
         </Link>
         <Link href='/projects'>
           <div
-            className='transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4'
+            className='transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4 hover:scale-105'
             onClick={() => dispatch(handleSidebar(false))}
           >
             <svg
@@ -80,7 +80,7 @@ export default function NavMenu(): JSX.Element {
           </div>
         </Link>
         <Link href='/contact' onClick={() => dispatch(handleSidebar(false))}>
-          <div className='transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4'>
+          <div className='transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4 hover:scale-105'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               fill='none'

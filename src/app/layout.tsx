@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={opensans.className}>
+      <body className={`${opensans.className}`}>
         <ReduxProvider>
           <Navbar />
           <GridLayout>{children}</GridLayout>

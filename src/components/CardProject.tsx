@@ -118,13 +118,18 @@ export default function CardProject(props: Project): JSX.Element {
               image
             }
             fill
-            loading='lazy'
             alt={image}
             style={{ objectFit: "cover" }}
             sizes='100%'
+            loading='lazy'
+            blurDataURL={
+              `https://res.cloudinary.com/dngppnrwo/image/upload/v1698297774/web/projects` +
+              image
+            }
+            placeholder='blur'
           />
         </div>
-        <div className='px-6 py-5 h-40 flex flex-col'>
+        <div className='px-6 py-5 h-40 flex flex-col bg-white'>
           <h3 className='font-medium'>{title}</h3>
           <div className='grow mt-3'>
             <p className='text-zinc-500'>{desc}</p>
