@@ -14,7 +14,7 @@ export function useCountDurationCareer(start: string, end: string) {
   }
 
   if (year === 0) {
-    return `${month} Month`;
+    return `${month} Months`;
   }
   return `${year} Years ${month} Months`;
 }
