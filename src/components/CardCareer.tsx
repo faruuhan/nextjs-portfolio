@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import Image from "next/image";
-import { useCountDurationCareer } from "@/utils/hook/useCountDurationCareer";
+import { useCountDurationCareer } from "@/utils/hooks/useCountDurationCareer";
 
 interface Career {
   data: {
