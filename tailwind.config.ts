@@ -15,11 +15,16 @@ const config = {
       },
       animation: {
         "slide-up": "slide-up 1s ease-in-out",
+        "zoom-in": "zoom-in 1s ease-in-out",
       },
       keyframes: {
         "slide-up": {
           "0%": { opacity: 0, transform: "translateY(30%)" },
           "100%": { opacity: 1, transform: "translateY(0%)" },
+        },
+        "zoom-in": {
+          "0%": { opacity: 0, transform: "scale(70%)" },
+          "100%": { opacity: 1, transform: "scale(100%)" },
         },
       },
     },

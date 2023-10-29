@@ -19,7 +19,8 @@ export default function GridLayout({
       <LoadingBar
         color='black'
         progress={loadingBar}
-        height={3}
+        height={4}
+        shadow
         onLoaderFinished={() => dispatch(handleLoandingBar(0))}
       />
       <div className='mx-4 pt-4 lg:pt-0 lg:mx-auto relative lg:w-[1024px] flex flex-col min-h-screen lg:flex-row lg:gap-5'>

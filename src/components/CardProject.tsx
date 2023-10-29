@@ -15,7 +15,7 @@ export default function CardProject(props: Project): JSX.Element {
 
   return (
     <>
-      <div className='rounded-xl overflow-hidden border border-zinc-300'>
+      <div className='rounded-xl overflow-hidden border border-zinc-300 animate-zoom-in'>
         <div className='h-[200px] relative'>
           <Image
             src={
