@@ -1,7 +1,10 @@
 "use client";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
-import { handleSidebar } from "@/utils/redux/actions/storeSlice";
+import {
+  handleSidebar,
+  handleLoandingBar,
+} from "@/utils/redux/actions/storeSlice";
 import { AppDispatch } from "@/utils/redux/store";
 import { usePathname } from "next/navigation";
 
@@ -18,7 +21,10 @@ export default function NavMenu(): JSX.Element {
             className={`transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4 hover:scale-105 ${
               pathname === "/" && "bg-zinc-100"
             }`}
-            onClick={() => dispatch(handleSidebar(false))}
+            onClick={() => {
+              dispatch(handleSidebar(false));
+              dispatch(handleLoandingBar(pathname === "/" ? 100 : 30));
+            }}
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -42,7 +48,10 @@ export default function NavMenu(): JSX.Element {
             className={`transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4 hover:scale-105 ${
               pathname === "/about" && "bg-zinc-100"
             }`}
-            onClick={() => dispatch(handleSidebar(false))}
+            onClick={() => {
+              dispatch(handleSidebar(false));
+              dispatch(handleLoandingBar(pathname === "/about" ? 100 : 30));
+            }}
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -66,7 +75,10 @@ export default function NavMenu(): JSX.Element {
             className={`transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4 hover:scale-105 ${
               pathname === "/projects" && "bg-zinc-100"
             }`}
-            onClick={() => dispatch(handleSidebar(false))}
+            onClick={() => {
+              dispatch(handleSidebar(false));
+              dispatch(handleLoandingBar(pathname === "/projects" ? 100 : 30));
+            }}
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -85,7 +97,13 @@ export default function NavMenu(): JSX.Element {
             Projects
           </div>
         </Link>
-        <Link href='/contact' onClick={() => dispatch(handleSidebar(false))}>
+        <Link
+          href='/contact'
+          onClick={() => {
+            dispatch(handleSidebar(false));
+            dispatch(handleLoandingBar(pathname === "/contact" ? 100 : 30));
+          }}
+        >
           <div
             className={`transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4 hover:scale-105 ${
               pathname === "/contact" && "bg-zinc-100"

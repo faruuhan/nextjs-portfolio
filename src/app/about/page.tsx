@@ -1,16 +1,19 @@
 "use client";
 import { useEffect } from "react";
 import CardEducation from "@/components/CardEducation";
-import { useSelector } from "react-redux";
-import { RootState } from "@/utils/redux/store";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState, AppDispatch } from "@/utils/redux/store";
+import { handleLoandingBar } from "@/utils/redux/actions/storeSlice";
 
 export default function About() {
   const education = useSelector(
     (state: RootState) => state.storeSlice.education
   );
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
+    dispatch(handleLoandingBar(100));
   }, []);
   return (
     <>

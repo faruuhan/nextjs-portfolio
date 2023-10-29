@@ -6,6 +6,7 @@ const storeSlice = createSlice({
   name: "storeslice",
   initialState: {
     showSidebar: false as boolean,
+    loadingBar: 0 as number,
     profile: {
       sampulImage: "/marsha_cltbqq.jpg",
       profileImage: "/profile_u9jqpt.jpg",
@@ -111,8 +112,11 @@ const storeSlice = createSlice({
         sidebar!.classList.remove("translate-x-full");
       }
     },
+    handleLoandingBar: (state, action: PayloadAction<number>) => {
+      state.loadingBar = action.payload;
+    },
   },
 });
 
-export const { handleSidebar } = storeSlice.actions;
+export const { handleSidebar, handleLoandingBar } = storeSlice.actions;
 export default storeSlice.reducer;

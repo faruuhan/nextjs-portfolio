@@ -7,10 +7,15 @@ import {
   SiGithub,
   SiLinkedin,
 } from "@icons-pack/react-simple-icons";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "@/utils/redux/store";
+import { handleLoandingBar } from "@/utils/redux/actions/storeSlice";
 
 export default function Contact(): JSX.Element {
+  const dispatch = useDispatch<AppDispatch>();
   useEffect(() => {
     window.scrollTo({ top: 0 });
+    dispatch(handleLoandingBar(100));
   }, []);
   return (
     <>

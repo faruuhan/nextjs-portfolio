@@ -1,14 +1,17 @@
 "use client";
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "@/utils/redux/store";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState, AppDispatch } from "@/utils/redux/store";
+import { handleLoandingBar } from "@/utils/redux/actions/storeSlice";
 import CardProject from "@/components/CardProject";
 
 export default function Project(): JSX.Element {
   const projects = useSelector((state: RootState) => state.storeSlice.projects);
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
+    dispatch(handleLoandingBar(100));
   }, []);
 
   return (

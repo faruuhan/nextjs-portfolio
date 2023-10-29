@@ -3,12 +3,14 @@ import React, { useEffect, useState } from "react";
 import CardCareer from "@/components/CardCareer";
 import SkillList from "@/components/SkillList";
 import CardProject from "@/components/CardProject";
-import { useSelector } from "react-redux";
-import { RootState } from "@/utils/redux/store";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState, AppDispatch } from "@/utils/redux/store";
+import { handleLoandingBar } from "@/utils/redux/actions/storeSlice";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 export default function Home() {
+  const dispatch = useDispatch<AppDispatch>();
   const career = useSelector((state: RootState) => state.storeSlice.career);
   const skills = useSelector((state: RootState) => state.storeSlice.skills);
   const projects = useSelector((state: RootState) => state.storeSlice.projects);
@@ -19,6 +21,7 @@ export default function Home() {
       setIsLoading(false);
     }, 1000);
     window.scrollTo({ top: 0 });
+    dispatch(handleLoandingBar(100));
   }, []);
 
   return (
