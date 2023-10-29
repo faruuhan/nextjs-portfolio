@@ -55,7 +55,7 @@ export default function CardProfile(props: Profile): JSX.Element {
         </div>
       </div>
       <div className='pt-9 px-4'>
-        <h3 className='font-medium text-lg'>{fullName}</h3>
+        <h6 className='font-medium text-lg'>{fullName}</h6>
         <p className='text-zinc-500'>@{username}</p>
 
         <p className='mt-2'>{bio}</p>

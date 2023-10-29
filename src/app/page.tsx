@@ -16,12 +16,13 @@ export default function Home() {
   const projects = useSelector((state: RootState) => state.storeSlice.projects);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
+  dispatch(handleLoandingBar(100));
+
   useEffect(() => {
     setInterval(() => {
       setIsLoading(false);
     }, 1000);
     window.scrollTo({ top: 0 });
-    dispatch(handleLoandingBar(100));
   }, []);
 
   return (
