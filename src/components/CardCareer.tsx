@@ -34,7 +34,7 @@ export default function CareerCard(props: Career): JSX.Element {
           />
         </div>
         <div className='space-y-1'>
-          <h6 className='text-base font-medium'>{position}</h6>
+          <h2 className='text-base font-medium'>{position}</h2>
           <div className='flex gap-2'>
             <span className='text-zinc-500 text-sm'>{company}</span>
             <span className='text-zinc-300 text-sm'>•</span>

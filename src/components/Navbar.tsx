@@ -15,6 +15,7 @@ export default function Navbar(): JSX.Element {
         <button
           className='border rounded-md p-2 hover:bg-zinc-200'
           onClick={() => dispatch(handleSidebar(showSidebar ? false : true))}
+          aria-label='menu'
         >
           <svg
             xmlns='http://www.w3.org/2000/svg'
