@@ -18,56 +18,59 @@ export default async function handler(
   const basic = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
 
   const getAccessToken = async () => {
-    const response = await fetch("https://accounts.spotify.com/api/token", {
-      method: "POST",
-      headers: {
-        Authorization: `Basic ${basic}`,
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: querystring.stringify({
-        grant_type: "refresh_token",
-        refresh_token,
-      }),
-    });
-
-    return response.json();
+    try {
+      const response = await fetch("https://accounts.spotify.com/api/token", {
+        method: "POST",
+        headers: {
+          Authorization: `Basic ${basic}`,
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: querystring.stringify({
+          grant_type: "refresh_token",
+          refresh_token,
+        }),
+      });
+      return response.json();
+    } catch (error) {}
   };
 
   const getNowPlaying = async () => {
-    const { access_token } = await getAccessToken();
+    try {
+      const { access_token } = await getAccessToken();
 
-    const response = await fetch(
-      "https://api.spotify.com/v1/me/player/currently-playing",
-      {
-        headers: {
-          Authorization: `Bearer ${access_token}`,
-        },
-      }
-    );
+      const response = await fetch(
+        "https://api.spotify.com/v1/me/player/currently-playing",
+        {
+          headers: {
+            Authorization: `Bearer ${access_token}`,
+          },
+        }
+      );
 
-    return response.json();
+      return response.json();
+    } catch (error) {}
   };
 
-  const response = await getNowPlaying();
+  try {
+    const response = await getNowPlaying();
 
-  if (
-    response.status === 204 ||
-    response.status > 400 ||
-    response.currently_playing_type !== "track"
-  ) {
-    return res.status(200).json({ isPlaying: false });
+    if (response.currently_playing_type !== "track") {
+      return res.status(response.status).json({ isPlaying: false });
+    }
+
+    const data = {
+      isPlaying: response.is_playing,
+      title: response.item.name,
+      album: response.item.album.name,
+      artist: response.item.album.artists
+        .map((artist: AlbumArtists) => artist.name)
+        .join(", "),
+      albumImageUrl: response.item.album.images[0].url,
+      songUrl: response.item.external_urls.spotify,
+    };
+
+    res.status(200).json(data);
+  } catch (error) {
+    return res.status(204).end();
   }
-
-  const data = {
-    isPlaying: response.is_playing,
-    title: response.item.name,
-    album: response.item.album.name,
-    artist: response.item.album.artists
-      .map((artist: AlbumArtists) => artist.name)
-      .join(", "),
-    albumImageUrl: response.item.album.images[0].url,
-    songUrl: response.item.external_urls.spotify,
-  };
-
-  res.status(200).json(data);
 }

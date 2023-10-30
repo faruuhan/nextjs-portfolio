@@ -4,7 +4,7 @@ import useSWR from "swr";
 import Image from "next/image";
 
 export default function CardSpotify(): JSX.Element {
-  const fetcher = (url: string) => fetch(url).then((r) => r.json());
+  const fetcher = (url: string) => fetch(url).then((ress) => ress.json());
   const { data } = useSWR("api/spotify", fetcher);
   return (
     <>

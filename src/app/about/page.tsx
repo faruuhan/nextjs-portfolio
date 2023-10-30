@@ -11,10 +11,10 @@ export default function About() {
   );
   const dispatch = useDispatch<AppDispatch>();
 
-  dispatch(handleLoandingBar(100));
-
   useEffect(() => {
     window.scrollTo({ top: 0 });
+    dispatch(handleLoandingBar(100));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <>

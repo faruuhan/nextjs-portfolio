@@ -14,10 +14,10 @@ import { handleLoandingBar } from "@/utils/redux/actions/storeSlice";
 export default function Contact(): JSX.Element {
   const dispatch = useDispatch<AppDispatch>();
 
-  dispatch(handleLoandingBar(100));
-
   useEffect(() => {
     window.scrollTo({ top: 0 });
+    dispatch(handleLoandingBar(100));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <>
