@@ -1,5 +1,4 @@
 "use client";
-import { useEffect, useState } from "react";
 import { SiSpotify, SiSpotifyHex } from "@icons-pack/react-simple-icons";
 import useSWR from "swr";
 import Image from "next/image";
