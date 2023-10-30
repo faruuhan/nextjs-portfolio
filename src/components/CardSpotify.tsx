@@ -20,7 +20,7 @@ export default function CardSpotify(): JSX.Element {
         <div className='flex gap-2 p-4 relative'>
           {data?.isPlaying ? (
             <a href={data?.songUrl} target='_blank' rel='noopener noreferrer'>
-              <div className='min-w-[60px] min-h-[60px] relative'>
+              <div className='min-w-[60px] min-h-[60px] relative rounded-md overflow-hidden'>
                 <Image
                   src={data?.albumImageUrl}
                   alt={data?.album}
