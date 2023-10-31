@@ -10,7 +10,7 @@ export default function CardSpotify(): JSX.Element {
 
   return (
     <>
-      <div className='rounded-xl border bg-white drop-shadow overflow-hidden'>
+      <div className='rounded-xl border bg-white drop-shadow-lg overflow-hidden'>
         {data?.isPlaying && (
           <div className='bg-zinc-100 px-4 py-1 flex justify-between items-center'>
             <p className='text-sm'>Now Playing</p>
@@ -26,6 +26,8 @@ export default function CardSpotify(): JSX.Element {
                   alt={data?.album}
                   sizes='100vw 100vh'
                   fill
+                  loading='lazy'
+                  style={{ objectFit: "contain" }}
                 />
               </div>
             </a>
@@ -45,7 +47,7 @@ export default function CardSpotify(): JSX.Element {
             </p>
           </div>
 
-          <div className='absolute bottom-4 right-4'>
+          <div className='absolute bottom-2 right-2'>
             <SiSpotify
               title={data?.isPlaying ? "Now Playing" : "Spotify is Offline"}
               size={24}
