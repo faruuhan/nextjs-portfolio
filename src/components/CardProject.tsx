@@ -35,7 +35,7 @@ export default function CardProject(props: Project): JSX.Element {
             }
             placeholder='blur'
           />
-          <div className='bg-black/70 w-full h-full absolute top-0 left-0 opacity-0 transition duration-300 group-hover:opacity-100 group-hover:ease-in-out flex justify-center items-center z-20'>
+          <div className='bg-black/70 w-full h-full absolute top-0 left-0 opacity-0 transition duration-300 group-hover:opacity-100 group-hover:ease-in-out flex justify-center items-center'>
             <a href={urlRepositories} target='_blank' rel='noopener noreferrer'>
               <SiGithub size={35} color='white' title='GitHub Repositories' />
             </a>
@@ -43,7 +43,7 @@ export default function CardProject(props: Project): JSX.Element {
         </div>
         <div className='px-6 py-5 h-40 flex flex-col bg-white'>
           <a
-            href='http://'
+            href={urlRepositories}
             target='_blank'
             rel='noopener noreferrer'
             className='font-medium group-hover:text-emerald-500'
