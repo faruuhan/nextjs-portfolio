@@ -12,6 +12,7 @@ export interface Projects {
   title: string;
   desc: string;
   techStack: string[];
+  urlRepositories: string;
 }
 
 export interface Education {
