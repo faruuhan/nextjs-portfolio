@@ -1,9 +1,9 @@
 "use client";
-import NavMenu from "@/components/NavMenu";
-import CardProfile from "@/components/CardProfile";
+import NavMenu from "@/libs/components/NavMenu";
+import CardProfile from "@/libs/components/CardProfile";
 import { useSelector } from "react-redux";
 import { RootState } from "@/utils/redux/store";
-import CardSpotify from "./CardSpotify";
+import CardSpotify from "@/libs/components/CardSpotify";
 
 export default function Sidebar(): JSX.Element {
   const profile = useSelector((state: RootState) => state.storeSlice.profile);

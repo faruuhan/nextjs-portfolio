@@ -1,11 +1,11 @@
 "use client";
-import Sidebar from "@/components/Sidebar";
+import Sidebar from "@/libs/components/Sidebar";
 import LoadingBar from "react-top-loading-bar";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState, AppDispatch } from "@/utils/redux/store";
 import { handleLoandingBar } from "@/utils/redux/actions/storeSlice";
 
-export default function GridLayout({
+export default function ContainerLayout({
   children,
 }: {
   children: React.ReactNode;

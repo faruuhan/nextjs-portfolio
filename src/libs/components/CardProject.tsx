@@ -1,5 +1,5 @@
 import Image from "next/image";
-import IconTechStack from "./IconTechStack";
+import IconTechStack from "@/libs/elements/IconTechStack";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 
 interface Project {
