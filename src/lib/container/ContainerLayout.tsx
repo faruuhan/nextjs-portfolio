@@ -1,5 +1,5 @@
 "use client";
-import Sidebar from "@/libs/components/Sidebar";
+import Sidebar from "@/lib/components/Sidebar";
 import LoadingBar from "react-top-loading-bar";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState, AppDispatch } from "@/utils/redux/store";

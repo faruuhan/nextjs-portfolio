@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState, AppDispatch } from "@/utils/redux/store";
 import { handleLoandingBar } from "@/utils/redux/actions/storeSlice";
-import CardProject from "@/libs/components/CardProject";
+import CardProject from "@/lib/components/CardProject";
 
 export default function Project(): JSX.Element {
   const projects = useSelector((state: RootState) => state.storeSlice.projects);

@@ -1,5 +1,5 @@
 "use client";
-import IconTechStack from "@/libs/elements/IconTechStack";
+import IconTechStack from "@/lib/elements/IconTechStack";
 import { Skill } from "@/utils/interface";
 
 export default function SkillList({ title }: Skill): JSX.Element {

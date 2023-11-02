@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import CardCareer from "@/libs/components/CardCareer";
-import SkillList from "@/libs/components/SkillList";
-import CardProject from "@/libs/components/CardProject";
+import CardCareer from "@/lib/components/CardCareer";
+import SkillList from "@/lib/components/SkillList";
+import CardProject from "@/lib/components/CardProject";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState, AppDispatch } from "@/utils/redux/store";
 import { handleLoandingBar } from "@/utils/redux/actions/storeSlice";

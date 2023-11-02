@@ -4,8 +4,8 @@ import { Open_Sans } from "next/font/google";
 
 import ReduxProvider from "@/utils/redux/ReduxProvider";
 
-import ContainerLayout from "@/libs/container/ContainerLayout";
-import Navbar from "@/libs/components/Navbar";
+import ContainerLayout from "@/lib/container/ContainerLayout";
+import Navbar from "@/lib/components/Navbar";
 
 const opensans = Open_Sans({ subsets: ["latin"], display: "swap" });
 
