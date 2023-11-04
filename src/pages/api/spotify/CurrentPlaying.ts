@@ -1,38 +1,10 @@
 import { NextApiResponse, NextApiRequest } from "next";
-import querystring from "querystring";
+import { getAccessToken } from "../utils/getAccessToken";
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async function GET(req: NextApiRequest, res: NextApiResponse) {
   interface AlbumArtists {
     name: string;
   }
-
-  const {
-    SPOTIFY_CLIENT_ID: client_id,
-    SPOTIFY_CLIENT_SECRET: client_secret,
-    SPOTIFY_REFRESH_TOKEN: refresh_token,
-  } = process.env;
-
-  const basic = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
-
-  const getAccessToken = async () => {
-    try {
-      const response = await fetch("https://accounts.spotify.com/api/token", {
-        method: "POST",
-        headers: {
-          Authorization: `Basic ${basic}`,
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: querystring.stringify({
-          grant_type: "refresh_token",
-          refresh_token,
-        }),
-      });
-      return response.json();
-    } catch (error) {}
-  };
 
   const getNowPlaying = async () => {
     try {
@@ -48,7 +20,11 @@ export default async function handler(
       );
 
       return response.json();
-    } catch (error) {}
+    } catch (error) {
+      res.status(400).json({
+        message: "Invalid",
+      });
+    }
   };
 
   try {

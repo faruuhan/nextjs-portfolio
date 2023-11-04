@@ -6,24 +6,41 @@ import { Waveform } from "@uiball/loaders";
 
 export default function CardSpotify(): JSX.Element {
   const fetcher = (url: string) => fetch(url).then((ress) => ress.json());
-  const { data } = useSWR("api/spotify", fetcher);
+  const { data } = useSWR("api/spotify/CurrentPlaying", fetcher);
+  const recentlyPlayed = useSWR("api/spotify/RecentlyPlayed", fetcher);
 
   return (
     <>
       <div className='rounded-xl border bg-white drop-shadow-lg overflow-hidden'>
-        {data?.isPlaying && (
+        {data?.isPlaying || recentlyPlayed.data ? (
           <div className='bg-zinc-100 px-4 py-1 flex justify-between items-center'>
-            <p className='text-sm'>Now Playing</p>
+            <p className='text-sm'>
+              {data?.isPlaying ? "Now Playing" : "Recently Played"}
+            </p>
             <Waveform size={16} lineWeight={1.5} color={SiSpotifyHex} />
           </div>
+        ) : (
+          ""
         )}
         <div className='flex gap-2 p-4 relative'>
-          {data?.isPlaying ? (
-            <a href={data?.songUrl} target='_blank' rel='noopener noreferrer'>
+          {data?.isPlaying || recentlyPlayed.data ? (
+            <a
+              href={
+                data?.isPlaying ? data?.songUrl : recentlyPlayed.data?.songUrl
+              }
+              target='_blank'
+              rel='noopener noreferrer'
+            >
               <div className='min-w-[60px] min-h-[60px] relative rounded-md overflow-hidden'>
                 <Image
-                  src={data?.albumImageUrl}
-                  alt={data?.album}
+                  src={
+                    data?.isPlaying
+                      ? data?.albumImageUrl
+                      : recentlyPlayed.data.albumImageUrl
+                  }
+                  alt={
+                    data?.isPlaying ? data?.album : recentlyPlayed.data?.album
+                  }
                   sizes='100vw 100vh'
                   fill
                   loading='lazy'
@@ -40,10 +57,18 @@ export default function CardSpotify(): JSX.Element {
           )}
           <div className='whitespace-nowrap overflow-hidden'>
             <h6 className='font-medium truncate'>
-              {data?.isPlaying ? data.title : "Not Listening"}
+              {data?.isPlaying
+                ? data.title
+                : recentlyPlayed.data
+                ? recentlyPlayed.data?.title
+                : "Not Listening"}
             </h6>
             <p className='text-sm text-zinc-600 truncate'>
-              {data?.isPlaying ? data.artist : "Spotify"}
+              {data?.isPlaying
+                ? data.artist
+                : recentlyPlayed.data
+                ? recentlyPlayed.data?.artist
+                : "Spotify"}
             </p>
           </div>
 
