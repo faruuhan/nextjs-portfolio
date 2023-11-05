@@ -18,7 +18,7 @@ const config = {
       },
       keyframes: {
         "slide-up": {
-          "0%": { opacity: 0, transform: "translateY(30%)" },
+          "0%": { opacity: 0, transform: "translateY(10%)" },
           "100%": { opacity: 1, transform: "translateY(0%)" },
         },
         "zoom-in": {
