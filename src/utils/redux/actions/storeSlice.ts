@@ -39,7 +39,7 @@ const storeSlice = createSlice({
         company: "BiznetGio.com",
         position: "Software Enginner",
         start: "7 November 2022",
-        end: "",
+        end: "7 November 2023",
         location: "Jakarta",
       },
     ] as Array<Career>,
