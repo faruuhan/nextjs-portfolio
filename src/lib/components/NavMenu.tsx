@@ -18,8 +18,8 @@ export default function NavMenu(): JSX.Element {
         <div className='border-t border-zinc-300 my-4'></div>
         <Link href='/'>
           <div
-            className={`transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4 hover:scale-105 ${
-              pathname === "/" && "bg-zinc-100"
+            className={`transition duration-300 ease-in-out py-2 flex gap-2 hover:font-semibold hover:bg-zinc-100 rounded-lg px-4 hover:scale-105 ${
+              pathname === "/" && "bg-zinc-100 font-semibold"
             }`}
             onClick={() => {
               dispatch(handleSidebar(false));
@@ -45,8 +45,8 @@ export default function NavMenu(): JSX.Element {
         </Link>
         <Link href='/about'>
           <div
-            className={`transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4 hover:scale-105 ${
-              pathname === "/about" && "bg-zinc-100"
+            className={`transition duration-300 ease-in-out py-2 flex gap-2 hover:font-semibold hover:bg-zinc-100 rounded-lg px-4 hover:scale-105 ${
+              pathname === "/about" && "bg-zinc-100 font-semibold"
             }`}
             onClick={() => {
               dispatch(handleSidebar(false));
@@ -72,8 +72,8 @@ export default function NavMenu(): JSX.Element {
         </Link>
         <Link href='/projects'>
           <div
-            className={`transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4 hover:scale-105 ${
-              pathname === "/projects" && "bg-zinc-100"
+            className={`transition duration-300 ease-in-out py-2 flex gap-2 hover:font-semibold hover:bg-zinc-100 rounded-lg px-4 hover:scale-105 ${
+              pathname === "/projects" && "bg-zinc-100 font-semibold"
             }`}
             onClick={() => {
               dispatch(handleSidebar(false));
@@ -105,8 +105,8 @@ export default function NavMenu(): JSX.Element {
           }}
         >
           <div
-            className={`transition duration-300 ease-in-out py-2 flex gap-2 hover:bg-zinc-100 rounded-lg px-4 hover:scale-105 ${
-              pathname === "/contact" && "bg-zinc-100"
+            className={`transition duration-300 ease-in-out py-2 flex gap-2 hover:font-semibold hover:bg-zinc-100 rounded-lg px-4 hover:scale-105 ${
+              pathname === "/contact" && "bg-zinc-100 font-semibold"
             }`}
           >
             <svg

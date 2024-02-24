@@ -7,24 +7,18 @@ export default async function GET(req: NextApiRequest, res: NextApiResponse) {
   }
 
   const getNowPlaying = async () => {
-    try {
-      const { access_token } = await getAccessToken();
+    const { access_token } = await getAccessToken();
 
-      const response = await fetch(
-        "https://api.spotify.com/v1/me/player/currently-playing",
-        {
-          headers: {
-            Authorization: `Bearer ${access_token}`,
-          },
-        }
-      );
+    const response = await fetch(
+      "https://api.spotify.com/v1/me/player/currently-playing",
+      {
+        headers: {
+          Authorization: `Bearer ${access_token}`,
+        },
+      }
+    );
 
-      return response.json();
-    } catch (error) {
-      res.status(400).json({
-        message: "Invalid",
-      });
-    }
+    return response.json();
   };
 
   try {

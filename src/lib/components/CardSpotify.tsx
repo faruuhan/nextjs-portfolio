@@ -2,7 +2,7 @@
 import { SiSpotify, SiSpotifyHex } from "@icons-pack/react-simple-icons";
 import useSWR from "swr";
 import Image from "next/image";
-import { Waveform } from "@uiball/loaders";
+import { Waveform, Momentum } from "@uiball/loaders";
 
 export default function CardSpotify(): JSX.Element {
   const fetcher = (url: string) => fetch(url).then((ress) => ress.json());
@@ -12,15 +12,17 @@ export default function CardSpotify(): JSX.Element {
   return (
     <>
       <div className='rounded-xl border bg-white drop-shadow-lg overflow-hidden'>
-        {data?.isPlaying || recentlyPlayed.data ? (
+        {(data?.isPlaying || recentlyPlayed.data) && (
           <div className='bg-zinc-100 px-4 py-1 flex justify-between items-center'>
             <p className='text-sm'>
               {data?.isPlaying ? "Now Playing" : "Recently Played"}
             </p>
-            <Waveform size={16} lineWeight={1.5} color={SiSpotifyHex} />
+            {data?.isPlaying ? (
+              <Waveform size={16} lineWeight={1.5} color={SiSpotifyHex} />
+            ) : (
+              <Momentum size={16} color={SiSpotifyHex} />
+            )}
           </div>
-        ) : (
-          ""
         )}
         <div className='flex gap-2 p-4 relative'>
           {data?.isPlaying || recentlyPlayed.data ? (
