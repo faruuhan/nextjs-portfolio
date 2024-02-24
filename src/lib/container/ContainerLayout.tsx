@@ -32,8 +32,7 @@ export default function ContainerLayout({
             showSidebar
               ? "bg-stone-800/60 backdrop-blur-[1px] visible"
               : "invisible lg:visible"
-          } lg:bg-transparent w-full absolute z-10 h-full lg:h-auto lg:static lg:w-3/12 lg:min-w-[25%] lg:block lg:my-10`}
-          id='sidebarParent'
+          } lg:bg-transparent w-full absolute z-10 h-full lg:z-0 lg:h-auto lg:static lg:w-3/12 lg:min-w-[25%] lg:block lg:my-10`}
         >
           <Sidebar />
         </div>
