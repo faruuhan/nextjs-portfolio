@@ -9,7 +9,10 @@ export default function Sidebar(): JSX.Element {
   const profile = useSelector((state: RootState) => state.storeSlice.profile);
   return (
     <>
-      <section className='lg:sticky lg:top-10'>
+      <section
+        className='px-4 py-4 min-h-full bg-white ease-in-out duration-500 md:w-2/5 lg:duration-0 -translate-x-[120%] lg:translate-x-0  lg:px-0 lg:pt-0 lg:w-full lg:sticky lg:top-10'
+        id='sidebar'
+      >
         <CardProfile data={profile} />
         <NavMenu />
         <CardSpotify />

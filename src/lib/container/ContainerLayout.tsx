@@ -13,6 +13,9 @@ export default function ContainerLayout({
   const loadingBar = useSelector(
     (state: RootState) => state.storeSlice.loadingBar
   );
+  const showSidebar = useSelector(
+    (state: RootState) => state.storeSlice.showSidebar
+  );
   const dispatch = useDispatch<AppDispatch>();
   return (
     <>
@@ -23,14 +26,20 @@ export default function ContainerLayout({
         shadow
         onLoaderFinished={() => dispatch(handleLoandingBar(0))}
       />
-      <div className='mx-4 pt-4 lg:pt-0 lg:mx-auto relative lg:w-[1024px] flex flex-col min-h-screen lg:flex-row lg:gap-5'>
+      <div className='lg:mx-auto relative lg:w-[1024px] flex flex-col min-h-screen lg:flex-row lg:gap-5'>
         <div
-          className='w-full bg-white lg:bg-transparent absolute z-10 h-full lg:h-auto lg:static ease-in-out duration-500 lg:duration-0 -translate-x-[120%] lg:translate-x-0 lg:w-3/12 lg:min-w-[25%] lg:block lg:my-10'
-          id='sidebar'
+          className={`${
+            showSidebar
+              ? "bg-stone-800/60 backdrop-blur-[1px] visible"
+              : "invisible lg:visible"
+          } lg:bg-transparent w-full absolute z-10 h-full lg:h-auto lg:static lg:w-3/12 lg:min-w-[25%] lg:block lg:my-10`}
+          id='sidebarParent'
         >
           <Sidebar />
         </div>
-        <div className='w-full lg:w-9/12 lg:my-10'>{children}</div>
+        <div className='px-4 py-4 lg:pt-0 lg:px-0 w-full lg:w-9/12 lg:my-10'>
+          {children}
+        </div>
       </div>
     </>
   );

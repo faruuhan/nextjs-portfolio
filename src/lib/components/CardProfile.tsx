@@ -16,7 +16,7 @@ export default function CardProfile(props: Profile): JSX.Element {
   return (
     <>
       <div className='relative'>
-        <div className='w-full h-40 md:h-52 lg:h-32 relative overflow-hidden rounded-lg'>
+        <div className='w-full h-40 md:h-36 lg:h-32 relative overflow-hidden rounded-lg'>
           <Image
             src={
               `https://res.cloudinary.com/dngppnrwo/image/upload/v1698297803/web/profile` +
