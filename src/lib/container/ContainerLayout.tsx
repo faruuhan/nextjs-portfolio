@@ -27,7 +27,8 @@ export default function ContainerLayout({
         onLoaderFinished={() => dispatch(handleLoandingBar(0))}
       />
       <div className='relative'>
-        <div className='fixed m-auto left-0 right-0 -top-[720px] -z-10 filter opacity-70 bg-gradient-to-b from-orange-400 to-white blur-2xl rounded-full w-[90%] h-[1024px]'></div>
+        <div className='fixed m-auto left-0 right-0 -top-[720px] -z-10 filter opacity-70 bg-gradient-to-b from-lime-300 to-white blur-2xl rounded-full w-[90%] h-[1024px]'></div>
+        <div className='fixed w-72 h-72 bg-lime-200 opacity-0 filter blur-2xl rounded-full -z-10 left-64 bottom-36 animate-move'></div>
         <div className='lg:mx-auto relative lg:w-[1024px] flex flex-col min-h-screen lg:flex-row lg:gap-5'>
           <div
             className={`${

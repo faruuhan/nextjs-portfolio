@@ -18,7 +18,7 @@ export default function Sidebar(): JSX.Element {
           <NavMenu />
           <CardSpotify />
           <h4 className='text-zinc-500 text-sm text-center mt-4'>
-            ©2023 with ❤️ by <span className='font-semibold'>ファルハン</span>
+            ©2024 with ❤️ by <span className='font-semibold'>ファルハン</span>
           </h4>
           <h4 className='text-zinc-500 text-xs text-center mt-1'>
             Build with <span className='font-semibold italic'>Next.js</span> &{" "}
