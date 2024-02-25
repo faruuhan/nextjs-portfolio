@@ -13,7 +13,7 @@ export default function Sidebar(): JSX.Element {
         className='px-4 py-4 min-h-full bg-white ease-in-out duration-500 md:w-2/5 lg:duration-0 -translate-x-[120%] lg:translate-x-0 lg:px-0 lg:pt-0 lg:w-full'
         id='sidebar'
       >
-        <div className='sticky top-[5.6rem] lg:sticky lg:top-10'>
+        <div className='lg:sticky lg:top-10'>
           <CardProfile data={profile} />
           <NavMenu />
           <CardSpotify />
