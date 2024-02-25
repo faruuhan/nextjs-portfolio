@@ -6,6 +6,7 @@ import {
   SiTwitter,
   SiGithub,
   SiLinkedin,
+  SiX,
 } from "@icons-pack/react-simple-icons";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/utils/redux/store";
@@ -64,8 +65,8 @@ export default function Contact(): JSX.Element {
               target='_blank'
               rel='noopener noreferrer'
             >
-              <div className='rounded-md bg-[#1D9BF0] text-white py-2 px-5 flex items-center justify-center gap-2'>
-                <SiTwitter color='white' size={20} />
+              <div className='rounded-md bg-[#000000] text-white py-2 px-5 flex items-center justify-center gap-2'>
+                <SiX color='white' size={20} />
                 Twitter
               </div>
             </a>

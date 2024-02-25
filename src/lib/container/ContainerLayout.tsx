@@ -26,18 +26,21 @@ export default function ContainerLayout({
         shadow
         onLoaderFinished={() => dispatch(handleLoandingBar(0))}
       />
-      <div className='lg:mx-auto relative lg:w-[1024px] flex flex-col min-h-screen lg:flex-row lg:gap-5'>
-        <div
-          className={`${
-            showSidebar
-              ? "bg-stone-800/60 backdrop-blur-[1px] visible"
-              : "invisible lg:visible"
-          } lg:bg-transparent w-full absolute z-10 h-full lg:z-0 lg:h-auto lg:static lg:w-3/12 lg:min-w-[25%] lg:block lg:my-10`}
-        >
-          <Sidebar />
-        </div>
-        <div className='px-4 py-4 lg:pt-0 lg:px-0 w-full lg:w-9/12 lg:my-10'>
-          {children}
+      <div className='relative'>
+        <div className='fixed m-auto left-0 right-0 -top-[720px] -z-10 filter opacity-70 bg-gradient-to-b from-orange-400 to-white blur-2xl rounded-full w-[90%] h-[1024px]'></div>
+        <div className='lg:mx-auto relative lg:w-[1024px] flex flex-col min-h-screen lg:flex-row lg:gap-5'>
+          <div
+            className={`${
+              showSidebar
+                ? "bg-stone-800/60 backdrop-blur-[1px] visible"
+                : "invisible lg:visible"
+            } lg:bg-transparent w-full absolute z-10 h-full lg:z-0 lg:h-auto lg:static lg:w-3/12 lg:min-w-[25%] lg:block lg:my-10`}
+          >
+            <Sidebar />
+          </div>
+          <div className='px-4 py-4 lg:pt-0 lg:px-0 w-full lg:w-9/12 lg:my-10'>
+            {children}
+          </div>
         </div>
       </div>
     </>

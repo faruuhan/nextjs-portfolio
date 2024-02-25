@@ -89,7 +89,7 @@ export default function Home() {
             </div>
             <p className='text-zinc-500'>My profesional skills.</p>
           </div>
-          <div className='flex flex-wrap gap-2'>
+          <div className='flex flex-wrap justify-center gap-2'>
             {skills.map((skill, index) => (
               <SkillList key={index} title={skill} />
             ))}

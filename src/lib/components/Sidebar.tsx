@@ -10,7 +10,7 @@ export default function Sidebar(): JSX.Element {
   return (
     <>
       <section
-        className='px-4 py-4 min-h-full bg-white ease-in-out duration-500 md:w-2/5 lg:duration-0 -translate-x-[120%] lg:translate-x-0 lg:px-0 lg:pt-0 lg:w-full'
+        className='px-4 py-4 min-h-full bg-white ease-in-out duration-500 md:w-2/5 lg:duration-0 -translate-x-[120%] lg:translate-x-0 lg:px-0 lg:pt-0 lg:w-full lg:bg-transparent'
         id='sidebar'
       >
         <div className='lg:sticky lg:top-10'>

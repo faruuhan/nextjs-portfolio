@@ -5,7 +5,7 @@ import { Skill } from "@/utils/interface";
 export default function SkillList({ title }: Skill): JSX.Element {
   return (
     <>
-      <div className='rounded-full border bg-white border-zinc-300 py-2 px-5 flex gap-2'>
+      <div className='rounded-full border bg-white border-zinc-300 py-2 px-5 flex gap-2 text-black hover:bg-zinc-100'>
         <IconTechStack stack={title} size={24} />
         {title}
       </div>

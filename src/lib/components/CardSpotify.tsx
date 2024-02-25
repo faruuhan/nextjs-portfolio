@@ -20,7 +20,7 @@ export default function CardSpotify(): JSX.Element {
             {data?.isPlaying ? (
               <Waveform size={16} lineWeight={1.5} color={SiSpotifyHex} />
             ) : (
-              <Momentum size={16} color={SiSpotifyHex} />
+              <Momentum size={16} color={"#808080"} />
             )}
           </div>
         )}
@@ -52,7 +52,7 @@ export default function CardSpotify(): JSX.Element {
             </a>
           ) : (
             <SiSpotify
-              title={data?.isPlaying && "Spotify is Offline"}
+              title={data?.isPlaying && "Spotify Offline"}
               size={60}
               color={data?.isPlaying ? SiSpotifyHex : "#808080"}
             />
@@ -76,7 +76,7 @@ export default function CardSpotify(): JSX.Element {
 
           <div className='absolute bottom-2 right-2'>
             <SiSpotify
-              title={data?.isPlaying ? "Now Playing" : "Spotify is Offline"}
+              title={data?.isPlaying ? "Now Playing" : "Spotify Offline"}
               size={24}
               color={data?.isPlaying ? SiSpotifyHex : "#808080"}
             />
