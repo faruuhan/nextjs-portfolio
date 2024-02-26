@@ -35,9 +35,14 @@ export default function CardProject(props: Project): JSX.Element {
             }
             placeholder='blur'
           />
-          <div className='bg-black/70 w-full h-full absolute top-0 left-0 opacity-0 transition duration-300 group-hover:opacity-100 group-hover:ease-in-out flex justify-center items-center'>
+          <div className='bg-black/50 w-full h-full absolute top-0 left-0 opacity-0 transition duration-300 group-hover:opacity-100 group-hover:ease-in-out group-hover:backdrop-blur-[2px] flex justify-center items-center'>
             <a href={urlRepositories} target='_blank' rel='noopener noreferrer'>
-              <SiGithub size={35} color='white' title='GitHub Repositories' />
+              <SiGithub
+                size={35}
+                color='white'
+                title='GitHub Repositories'
+                className='hover:scale-125 ease-in-out duration-500'
+              />
             </a>
           </div>
         </div>
