@@ -80,7 +80,7 @@ export default function About() {
 
               <h3 className='capitalize font-semibold text-xl'>Certificate</h3>
             </div>
-            <p className='text-zinc-500'>My educational journey.</p>
+            <p className='text-zinc-500'>My certificate or achievement.</p>
           </div>
           <Swiper
             modules={[Autoplay, Pagination]}
