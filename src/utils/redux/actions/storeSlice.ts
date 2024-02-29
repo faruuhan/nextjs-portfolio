@@ -1,6 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { Career, Projects, Education, Profile } from "@/utils/interface";
+import {
+  Career,
+  Projects,
+  Education,
+  Profile,
+  Certificate,
+} from "@/utils/interface";
 
 const storeSlice = createSlice({
   name: "storeslice",
@@ -105,6 +111,32 @@ const storeSlice = createSlice({
         urlRepositories: "https://github.com/faruuhan/pokemon-app",
       },
     ] as Array<Projects>,
+    certificate: [
+      {
+        image: "/hrafhmbsscpucjfjhqg8.jpg",
+        title: "Frontend Engineer Immersive Program Batch 04",
+      },
+      {
+        image: "/hsj9jtmrzkvakmeuzm2g.jpg",
+        title: "Workshop Javascript 101",
+      },
+      {
+        image: "/wjgsdbwprutorpfxz7ex.jpg",
+        title: "HTML Course Sololearn",
+      },
+      {
+        image: "/oohpefiafqyawdgre9jf.jpg",
+        title: "Workshop Backend 101",
+      },
+      {
+        image: "/l82joa7zgcssyjvtwukd.jpg",
+        title: "Full Stack Web Development Trial Class",
+      },
+      {
+        image: "/qmu9adltxw4guhznxteb.jpg",
+        title: "Company Profile Website With Wordpress",
+      },
+    ] as Array<Certificate>,
   },
   reducers: {
     handleSidebar: (state, action: PayloadAction<boolean>) => {

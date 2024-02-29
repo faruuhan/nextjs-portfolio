@@ -35,3 +35,8 @@ export interface Profile {
 export interface Skill {
   title: string;
 }
+
+export interface Certificate {
+  image: string;
+  title: string;
+}
